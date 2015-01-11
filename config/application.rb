@@ -27,7 +27,7 @@ module Hipsterpizza
 
     config.action_dispatch.default_headers = {
       'Content-Security-Policy' =>  <<-END.gsub("\n", ';').gsub(/\s+/, ' ')
-        img-src       'self'
+        img-src       'self'  https://www.noname-ev.de
         script-src    'self' 'unsafe-eval' 'unsafe-inline'
         style-src     'self' 'unsafe-eval' 'unsafe-inline' https://fonts.googleapis.com
         font-src      'self'  https://fonts.gstatic.com
