@@ -3,6 +3,7 @@ class BasketSubmitController < ApplicationController
   include ActionController::Live
 
   before_filter :require_basket, only: :submit
+  before_filter :fake_protect, only: :submit
 
   def submit
     @basket.update_attribute(:submitted, Time.now)

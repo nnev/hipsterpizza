@@ -87,6 +87,10 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def fake_protect
+    authenticate_or_request_with_http_basic { |_user, password| password.to_s == "42" }
+  end
+
   def splitted_app_layout
     # FIXME: this is an ugly hack because there doesn’t seem to be an
     # easy way to have a normal layout *and* stream the content

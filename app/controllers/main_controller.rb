@@ -2,6 +2,7 @@ class MainController < ApplicationController
   include CookieHelper
 
   before_action :find_basket
+  before_action :fake_protect, only: :toggle_admin
 
   def chooser
     b = Basket.find_basket_for_single_mode
