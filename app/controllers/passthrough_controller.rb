@@ -110,6 +110,9 @@ class PassthroughController < ApplicationController
 
     body.gsub!("http://#{host}/", '/')
     body.gsub!("https://#{host}/", '/')
+    body.gsub!("http://pizza.de/", '/')
+    body.gsub!("https://pizza.de/", '/')
+
     body.gsub!('window.location.hostname', 'window.location.host')
 
     # let JS believe the page was simply reloaded. Also replace our host with
@@ -136,6 +139,6 @@ class PassthroughController < ApplicationController
   end
 
   def forwarder
-    @forwarder ||= Forwarder.new("pizza.de")
+    @forwarder ||= Forwarder.new("shop.pizza.de")
   end
 end
